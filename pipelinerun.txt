@@ -1,0 +1,129 @@
+[init : remove] Removing all files from /workspace/source ...
+
+[clone : clone] + [ false = true ]
+[clone : clone] + [ false = true ]
+[clone : clone] + [ false = true ]
+[clone : clone] + CHECKOUT_DIR=/workspace/output/
+[clone : clone] + [ true = true ]
+[clone : clone] + cleandir
+[clone : clone] + [ -d /workspace/output/ ]
+[clone : clone] + rm -rf /workspace/output//*
+[clone : clone] + rm -rf /workspace/output//.[!.]*
+[clone : clone] + rm -rf /workspace/output//..?*
+[clone : clone] + test -z 
+[clone : clone] + test -z 
+[clone : clone] + test -z 
+[clone : clone] + git config --global --add safe.directory /workspace/output
+[clone : clone] + /ko-app/git-init -url=https://github.com/mahdikarray/devops-capstone-project.git -revision=cd-pipeline -refspec= -path=/workspace/output/ -sslVerify=true -submodules=true -depth=1 -sparseCheckoutDirectories=
+[clone : clone] {"level":"error","ts":1782697199.5874496,"caller":"git/git.go:53","msg":"Error running git [remote get-url origin]: exit status 2\nerror: No such remote 'origin'\n","stacktrace":"github.com/tektoncd-catalog/git-clone/git-init/git.run\n\tgithub.com/tektoncd-catalog/git-clone/git-init/git/git.go:53\ngithub.com/tektoncd-catalog/git-clone/git-init/git.Fetch\n\tgithub.com/tektoncd-catalog/git-clone/git-init/git/git.go:109\nmain.main\n\tgithub.com/tektoncd-catalog/git-clone/git-init/main.go:52\nruntime.main\n\truntime/proc.go:272"}
+[clone : clone] {"level":"info","ts":1782697212.0473368,"caller":"git/git.go:186","msg":"Successfully cloned https://github.com/mahdikarray/devops-capstone-project.git @ c32a9b73519cbdd69d61419269e18c92063d7bc6 (grafted, HEAD, origin/cd-pipeline) in path /workspace/output/"}
+[clone : clone] {"level":"info","ts":1782697212.7251775,"caller":"git/git.go:225","msg":"Successfully initialized and updated submodules in path /workspace/output/"}
+[clone : clone] + cd /workspace/output/
+[clone : clone] + git rev-parse HEAD
+[clone : clone] + RESULT_SHA=c32a9b73519cbdd69d61419269e18c92063d7bc6
+[clone : clone] + EXIT_CODE=0
+[clone : clone] + [ 0 != 0 ]
+[clone : clone] + git log -1 --pretty=%ct
+[clone : clone] + RESULT_COMMITTER_DATE=1782697044
+[clone : clone] + printf %s 1782697044
+[clone : clone] + printf %s c32a9b73519cbdd69d61419269e18c92063d7bc6
+[clone : clone] + printf %s https://github.com/mahdikarray/devops-capstone-project.git
+
+[lint : flake8] Collecting flake8
+[lint : flake8]   Downloading flake8-7.3.0-py2.py3-none-any.whl (57 kB)
+[lint : flake8]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 57.9/57.9 kB 1.3 MB/s eta 0:00:00
+[lint : flake8] Collecting pycodestyle<2.15.0,>=2.14.0
+[lint : flake8]   Downloading pycodestyle-2.14.0-py2.py3-none-any.whl (31 kB)
+[lint : flake8] Collecting pyflakes<3.5.0,>=3.4.0
+[lint : flake8]   Downloading pyflakes-3.4.0-py2.py3-none-any.whl (63 kB)
+[lint : flake8]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.6/63.6 kB 1.0 MB/s eta 0:00:00
+[lint : flake8] Collecting mccabe<0.8.0,>=0.7.0
+[lint : flake8]   Downloading mccabe-0.7.0-py2.py3-none-any.whl (7.3 kB)
+[lint : flake8] Installing collected packages: pyflakes, pycodestyle, mccabe, flake8
+[lint : flake8] Successfully installed flake8-7.3.0 mccabe-0.7.0 pycodestyle-2.14.0 pyflakes-3.4.0
+[lint : flake8] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[lint : flake8] 
+[lint : flake8] [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+[lint : flake8] [notice] To update, run: pip install --upgrade pip
+[lint : flake8] service/common/error_handlers.py:92:1: W293 blank line contains whitespace
+[lint : flake8] service/common/error_handlers.py:92:5: W292 no newline at end of file
+[lint : flake8] service/routes.py:180:1: W293 blank line contains whitespace
+[lint : flake8] service/routes.py:180:5: W292 no newline at end of file
+
+[tests : nosetests] ***** Installing dependencies *****
+[tests : nosetests] Requirement already satisfied: pip in /usr/local/lib/python3.9/site-packages (23.0.1)
+[tests : nosetests] Collecting pip
+[tests : nosetests]   Downloading pip-26.0.1-py3-none-any.whl (1.8 MB)
+[tests : nosetests]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 28.6 MB/s eta 0:00:00
+[tests : nosetests] Requirement already satisfied: wheel in /usr/local/lib/python3.9/site-packages (0.44.0)
+[tests : nosetests] Collecting wheel
+[tests : nosetests]   Downloading wheel-0.47.0-py3-none-any.whl (32 kB)
+[tests : nosetests] Collecting packaging>=24.0
+[tests : nosetests]   Downloading packaging-26.2-py3-none-any.whl (100 kB)
+[tests : nosetests]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.2/100.2 kB 38.3 MB/s eta 0:00:00
+[tests : nosetests] Installing collected packages: pip, packaging, wheel
+[tests : nosetests]   Attempting uninstall: pip
+[tests : nosetests]     Found existing installation: pip 23.0.1
+[tests : nosetests]     Uninstalling pip-23.0.1:
+[tests : nosetests]       Successfully uninstalled pip-23.0.1
+[tests : nosetests]   Attempting uninstall: wheel
+[tests : nosetests]     Found existing installation: wheel 0.44.0
+[tests : nosetests]     Uninstalling wheel-0.44.0:
+[tests : nosetests]       Successfully uninstalled wheel-0.44.0
+[tests : nosetests] Successfully installed packaging-26.2 pip-26.0.1 wheel-0.47.0
+[tests : nosetests] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[tests : nosetests] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[tests : nosetests] ***** Running nosetests with: -v --with-spec --spec-color
+[tests : nosetests] nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
+[tests : nosetests] nose.plugins.cover: INFO: Coverage report will include only packages: ['service']
+[tests : nosetests] 
+[tests : nosetests] Test Flask CLI Commands
+[tests : nosetests] [1;32m- It should call the db-create command[1;0m
+[tests : nosetests] 
+[tests : nosetests] Test Cases for Account Model
+[tests : nosetests] [1;32m- It should Create an account and add it to the database[1;0m
+[tests : nosetests] [1;32m- It should Create an Account and assert that it exists[1;0m
+[tests : nosetests] [1;32m- It should Delete an account from the database[1;0m
+[tests : nosetests] [1;32m- It should Deserialize an account[1;0m
+[tests : nosetests] [1;32m- It should not Deserialize an account with a KeyError[1;0m
+[tests : nosetests] [1;32m- It should not Deserialize an account with a TypeError[1;0m
+[tests : nosetests] [1;32m- It should Find an Account by name[1;0m
+[tests : nosetests] [1;32m- It should List all Accounts in the database[1;0m
+[tests : nosetests] [1;32m- It should Read an account[1;0m
+[tests : nosetests] [1;32m- It should Serialize an account[1;0m
+[tests : nosetests] [1;32m- It should Update an account[1;0m
+[tests : nosetests] 
+[tests : nosetests] Account Service Tests
+[tests : nosetests] [1;32m- It should not Create an Account when sending the wrong data[1;0m
+[tests : nosetests] [1;32m- It should return a CORS header[1;0m
+[tests : nosetests] [1;32m- It should Create a new Account[1;0m
+[tests : nosetests] [1;32m- It should Delete an Account[1;0m
+[tests : nosetests] [1;32m- It should Read a single Account[1;0m
+[tests : nosetests] [1;32m- It should Get a list of Accounts[1;0m
+[tests : nosetests] [1;32m- It should not Read an Account that is not found[1;0m
+[tests : nosetests] [1;32m- It should be healthy[1;0m
+[tests : nosetests] [1;32m- It should get 200_OK from the Home Page[1;0m
+[tests : nosetests] [1;32m- It should not allow an illegal method call[1;0m
+[tests : nosetests] [1;32m- It should return security headers[1;0m
+[tests : nosetests] [1;32m- It should not Create an Account when sending the wrong media type[1;0m
+[tests : nosetests] [1;32m- It should Update an existing Account[1;0m
+[tests : nosetests] 
+[tests : nosetests] Name                               Stmts   Miss  Cover
+[tests : nosetests] ------------------------------------------------------
+[tests : nosetests] service/__init__.py                   22      3    86%
+[tests : nosetests] service/common/__init__.py             0      0   100%
+[tests : nosetests] service/common/cli_commands.py         7      0   100%
+[tests : nosetests] service/common/error_handlers.py      32      3    91%
+[tests : nosetests] service/common/log_handlers.py        10      1    90%
+[tests : nosetests] service/common/status.py              46      0   100%
+[tests : nosetests] service/config.py                     11      5    55%
+[tests : nosetests] service/models.py                     69      3    96%
+[tests : nosetests] service/routes.py                     56      1    98%
+[tests : nosetests] ------------------------------------------------------
+[tests : nosetests] TOTAL                                253     16    94%
+[tests : nosetests] ----------------------------------------------------------------------
+[tests : nosetests] Ran 25 tests in 21.729s
+[tests : nosetests] 
+[tests : nosetests] OK
+[tests : nosetests] 
+
